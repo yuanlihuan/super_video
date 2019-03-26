@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.supers.mapper.SearchRecordsMapper" >
+  <resultMap id="BaseResultMap" type="com.supers.pojo.SearchRecords" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <select id="getHotContentList" resultType="String">
+  	SELECT a.content FROM search_records a
+	WHERE 1=1 
+	GROUP BY a.content ORDER BY COUNT(a.content) DESC LIMIT 8	
+  </select>
+</mapper>

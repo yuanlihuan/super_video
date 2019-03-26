@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.supers.mapper.custom.VideosMapperCustom" >
+  <resultMap id="BaseResultMap" type="com.supers.pojo.vo.VideoVo" >
+    <!-- 
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="audio_id" property="audioId" jdbcType="VARCHAR" />
+    <result column="video_desc" property="videoDesc" jdbcType="VARCHAR" />
+    <result column="video_path" property="videoPath" jdbcType="VARCHAR" />
+    <result column="video_seconds" property="videoSeconds" jdbcType="REAL" />
+    <result column="video_width" property="videoWidth" jdbcType="INTEGER" />
+    <result column="video_height" property="videoHeight" jdbcType="INTEGER" />
+    <result column="cover_path" property="coverPath" jdbcType="VARCHAR" />
+    <result column="like_counts" property="likeCounts" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="face_image" property="faceImage" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="queryAllVideos" resultMap="BaseResultMap" parameterType="java.lang.String">
+  		SELECT 
+  			a.*, b.face_image, b.nickname nick_name FROM videos a
+		LEFT JOIN users b ON b.id = a.user_id
+		WHERE 1=1 
+		
+		<if test=" videoDesc != null and videoDesc != '' ">
+  			and a.video_desc like '%${videoDesc}%'
+  		</if>
+  		<if test=" userId != null and userId != '' ">
+  			and b.id like '%${userId}%'
+  		</if>
+		AND a.status = 1
+		ORDER BY a.create_time DESC
+  </select>
+  
+  <update id="addVideoLikeCounts" parameterType="java.lang.String">
+  	UPDATE videos SET like_counts=like_counts+1 WHERE id = #{videoId}
+  </update>
+  
+  <update id="reduceVideoLikeCounts" parameterType="java.lang.String">
+  	UPDATE videos SET like_counts=like_counts-1 WHERE id = #{videoId}
+  </update>
+  
+  <select id="collectionAllVideos" resultMap="BaseResultMap" parameterType="java.lang.String">
+  	SELECT  a.*, b.face_image, b.nickname nick_name FROM videos a
+	LEFT JOIN users b ON b.id = a.user_id
+	LEFT JOIN users_like_videos c ON c.video_id = a.id
+	WHERE 1=1 
+	<if test=" userId != null and userId != '' ">
+  			AND c.user_id = #{userId}
+  	</if>
+  </select>
+  
+  <select id="followAllVideos" resultMap="BaseResultMap" parameterType="java.lang.String">
+  	SELECT  a.*, b.face_image, b.nickname nick_name FROM videos a
+	LEFT JOIN users b ON b.id = a.user_id
+	LEFT JOIN users_fans c ON c.user_id = b.id
+	WHERE 1=1 
+	<if test=" userId != null and userId != '' ">
+  			AND c.fan_id = #{userId}
+  	</if>
+  </select>
+</mapper>
