@@ -17,12 +17,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.supers.Interceptor.WebInterceptor;
+import com.supers.Interceptor.ZKCuratorClient;
 
 @Configuration
 @EnableWebMvc
 public class WebMvcConfig extends WebMvcConfigurerAdapter implements WebMvcConfigurer {
     private final long MAX_AGE_SECS = 3600;
 
+    @Bean(initMethod = "init")
+    public ZKCuratorClient zKCuratorClient() {
+    	return new ZKCuratorClient();
+    }
     
     @Bean
     public WebInterceptor webInterceptor() {

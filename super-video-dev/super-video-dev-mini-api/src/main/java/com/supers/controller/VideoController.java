@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.druid.util.StringUtils;
+import com.supers.conf.ResourceConfig;
 import com.supers.enums.VideoStatusEnums;
 import com.supers.pojo.Bgm;
 import com.supers.pojo.Videos;
@@ -44,6 +45,9 @@ public class VideoController {
 	
 	@Autowired
 	private VideoService videoService;
+	
+	@Autowired
+	private ResourceConfig resourceConfig;
 	
 	/**
 	 * 视频上传
@@ -74,7 +78,7 @@ public class VideoController {
 		if(StringUtils.isEmpty(userId)) {
 			return SuperJSONResult.errorMsg("上传用户未登录");
 		}
-		String fileSpace = ConstantConfig.USER_IMAGE_VIDEO;
+		String fileSpace = resourceConfig.getFileVideo();
 		String uploadPath = "/" + userId + "/video/";
 		//定义截图的路径保存数据库
 		String coverPath = "/" + userId + "/video/";
@@ -126,18 +130,18 @@ public class VideoController {
 				return SuperJSONResult.errorMsg("上传失败，音频文件未查到或者路径为空");
 			}
 			String ffmpegEXE = ConstantConfig.FFMPEG;
-			String mp3Path = ConstantConfig.USER_IMAGE_VIDEO+bgmDetail.getPath();
+			String mp3Path = resourceConfig.getFileVideo()+bgmDetail.getPath();
 			String uuid = UUID.randomUUID().toString();
 			uploadPath += uuid + ".mp4";
 			//设置数据库保存的路径
-			String videoAndMp3Path = ConstantConfig.USER_IMAGE_VIDEO + uploadPath;
+			String videoAndMp3Path = resourceConfig.getFileVideo() + uploadPath;
 			MergeVideoMp3 tool = new MergeVideoMp3(ffmpegEXE);
 			tool.convertor(finalVideoPath, mp3Path, videoSeconds, videoAndMp3Path);
 			
 			//将视频进行截图
 			coverPath += uuid+".jpg";
 			MergeVideoJpg videoJpg = new MergeVideoJpg(ffmpegEXE);
-			videoJpg.convertor(finalVideoPath, ConstantConfig.USER_IMAGE_VIDEO + coverPath);
+			videoJpg.convertor(finalVideoPath, resourceConfig.getFileVideo() + coverPath);
 
 			
 			//将需要保存的信息写入video中
@@ -178,7 +182,7 @@ public class VideoController {
 		if(StringUtils.isEmpty(userId) || StringUtils.isEmpty(videoId)) {
 			return SuperJSONResult.errorMsg("上传用户未登录");
 		}
-		String fileSpace = ConstantConfig.USER_IMAGE_VIDEO;
+		String fileSpace = resourceConfig.getFileVideo();
 		String uploadPath = "/" + userId + "/video/";
 		//数据库保存的路径
 		String uploadPathDB = null;

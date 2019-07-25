@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.druid.util.StringUtils;
+import com.supers.conf.ResourceConfig;
 import com.supers.pojo.Users;
 import com.supers.pojo.vo.UsersAndVideoVo;
 import com.supers.pojo.vo.UsersVo;
@@ -37,6 +38,9 @@ public class UserController extends ControllerRedis{
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private ResourceConfig resourceConfig;
 	/**
 	 * 用户上传头像
 	 * @throws FileNotFoundException 
@@ -51,7 +55,7 @@ public class UserController extends ControllerRedis{
 		if(StringUtils.isEmpty(userId)) {
 			return SuperJSONResult.errorMsg("上传用户未登录");
 		}
-		String fileSpace = ConstantConfig.USER_IMAGE_FACE;
+		String fileSpace = resourceConfig.getFileFace();
 		String uploadPath = "/" + userId + "/face/";
 		String uploadPathDb = null;
 		FileOutputStream fileOutputStream = null;

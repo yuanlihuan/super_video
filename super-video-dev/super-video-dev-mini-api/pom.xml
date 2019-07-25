@@ -1,10 +1,18 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.super</groupId>
     <artifactId>super-video-dev</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+  
+  <!-- 上项目用的是war包 -->
+  <!-- <packaging>war</packaging> -->
+  <!-- 默认是jar -->
+  <packaging>jar</packaging>
+  
   <artifactId>super-video-dev-mini-api</artifactId>
   <dependencies>
   	<dependency>
@@ -12,5 +20,11 @@
   		<artifactId>super-video-dev-service</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	<!-- 添加依赖，打成war包 -->
+  	<!-- <dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>javax.servlet-api</artifactId>
+  		<scope>provided</scope>
+  	</dependency> -->
   </dependencies>
 </project>
