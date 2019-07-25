@@ -1,0 +1,22 @@
+{
+  "pages":[
+    "pages/include/include",
+    "pages/demo1/demo1",
+    "pages/template/template",
+    
+    "pages/demo/demo",
+    "pages/index/index"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "第一个demo",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh":true
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

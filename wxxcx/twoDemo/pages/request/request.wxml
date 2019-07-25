@@ -1,0 +1,1 @@
+ <view bindtap="changeTap">点击</view>

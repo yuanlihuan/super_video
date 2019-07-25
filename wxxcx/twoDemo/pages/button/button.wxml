@@ -1,0 +1,8 @@
+<button size="mini">按钮</button>
+
+<button size="mini" type='primary'>按钮</button>
+
+<button size="mini" type='primary' loading ='{{true}}'>按钮</button>
+<button size="mini" type='primary' form-type='submit'>按钮</button>
+<button size="mini" type='primary'  plain='{{true}}'>按钮</button>
+<view>{{name}}</view>

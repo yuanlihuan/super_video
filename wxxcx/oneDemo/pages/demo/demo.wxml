@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">  
+   <text bindtap='clickMe'>{{motto}}</text>
+   <text data-name='liulai' bindtap='clickTo'>事件绑定</text>
+   <view>{{a+b==3? '是三':'不是三'}}</view>
+   <checkbox checked='{{true}}'></checkbox>
+   <view wx:for='{{user}}'>
+   下表：{{index}}，名字：{{item.name}}
+   </view>
+   <view wx:for='{{user}}' wx:for-index = 'ind' wx:for-item = 'user' >
+   下表：{{ind}}，名字：{{user.name}}
+   </view>
+    <switch wx:for="{{objectArray}}" wx:key="unique" style="display: block;">
+    {{item.id}}
+  </switch>
+  <button bindtap="switch">Switch</button>
+  <button bindtap="addToFront">Add to the front</button>
+</view>

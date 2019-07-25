@@ -1,0 +1,30 @@
+{
+  "pages":[
+    "pages/view/view",
+    "pages/request/request",
+    "pages/picker/picker",
+    "pages/input/input",
+    "pages/checkbox/checkbox",
+    "pages/button/button",
+    "pages/icon/icon",
+    "pages/movable/movable",
+    "pages/swiper/swiper",
+    "pages/scroll/scroll",
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wxe5f52902cf4de896"
+  ],
+  "permission":{
+    "scope.userLocation":{
+      "desc":"请点击确定"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/videoinfo/videoinfo",
+    "pages/report/report",
+    "pages/searchVideo/searchVideo",
+    "pages/userLogin/login",
+    "pages/userRegist/regist",
+    "pages/chooseBgm/chooseBgm"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "微信小视频",
+    "navigationBarTextStyle":"black"
+  },
+  "debug":true
+}

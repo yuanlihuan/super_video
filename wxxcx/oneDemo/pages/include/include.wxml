@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<include src = "../include/header.wxml"/>
+<view class="container">
+  好好学习 争取早日解放
+</view>
+<include src = "../include/footer.wxml"/>

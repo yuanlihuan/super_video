@@ -1,0 +1,32 @@
+<view class="group">
+  <block wx:for="{{iconSize}}">
+    <icon type="success" size="{{item}}" />
+  </block>
+</view>
+<view>
+<progress percent = "{{mypercent}}" show-info="{{true}}" border-radius="20rpx" font-size	="50rpx" active="{{true}}" active-mode	= "forwards"></progress>
+</view>
+<view bindtap='donghua'> mypercent</view>
+
+<view class='group'>
+  <block wx:for="{{iconColor}}">
+    <icon type='success' size="40" color='{{item}}'/>
+  </block>
+</view>
+
+<view class='group'>
+  <block wx:for="{{iconType}}">
+    <icon type='{{item}}' size="40" color='orange'/>
+  </block>
+</view>
+<view>
+<text selectable="{{true}}">今天好烦啊。。。。。。。。。。</text>
+<text space="{{emsp}}">今天好烦啊。。。    。。。。。。。</text>
+<text decode="{{true}}">&nbsp; &lt; &gt; &amp; &apos; &ensp; &emsp;</text>
+
+</view>
+<view>
+<rich-text nodes = "{{nodess}}"></rich-text>
+<rich-text nodes = "{{node2}}"></rich-text>
+
+</view>

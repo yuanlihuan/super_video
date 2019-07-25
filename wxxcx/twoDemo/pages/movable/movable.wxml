@@ -1,0 +1,5 @@
+<movable-area class="d clo">
+    <movable-view class="size"  direction="all" inertia="true" out-of-bounds="true" damping = "200" friction="20" scale="true" bindchange = "doChange"
+    scale-min	="2" scale-max ="10" scale-value = "2">
+    </movable-view>
+</movable-area>

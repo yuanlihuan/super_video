@@ -1,0 +1,11 @@
+var status = 1;
+var school = 'beijing';
+var method = function (obj) {
+  return obj;
+};
+
+module.exports = {
+  status : status,
+  school : school,
+  method : method
+}

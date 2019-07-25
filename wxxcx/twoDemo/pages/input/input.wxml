@@ -1,0 +1,7 @@
+  <input value="这是一个文本框"></input>
+    <input value="这是一个文本框" type="digit"></input>
+    <input value="这是一个文本框" type='number'></input>
+      <input value="这是一个文本框" type='idcard'></input>
+      <input value="这是一个文本框" type='text'></input>
+  <input value="" type='text' password='{{true}}'></input>
+    <input type='text'  placeholder="这是个占位符" placeholder-style="color:red" maxlength="7"></input>

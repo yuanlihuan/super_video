@@ -1,0 +1,18 @@
+<form bindsubmit="mySubmit" bindreset='myReset'>
+<checkbox-group name="aa" bindchange="changed">
+<checkbox value='a'>中国</checkbox>
+<checkbox value='a' color='blue' checked='{{true}}'>中国</checkbox>
+<checkbox value='a' color='blue' disabled='{{true}}' checked='{{true}}'>中国</checkbox>
+</checkbox-group>
+
+<checkbox-group name="bb">
+ <label wx:for="{{arrays}}">
+  <checkbox id='{{item.id}}' value='{{item.value}}' color='blue'
+   disabled='{{item.disable}}' checked='{{item.checked}}'>{{item.name}}</checkbox>
+</label>
+<button form-type='submit'>提交</button>
+<button form-type='reset'>重置</button>
+
+</checkbox-group>
+</form>
+<label for="1001">测试点击</label>

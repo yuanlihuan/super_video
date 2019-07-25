@@ -1,0 +1,17 @@
+<template name = "myTemp">
+  <view>姓名：{{name}}</view>
+  <view>年龄：{{age}}</view>
+  <view>年龄：{{address}}</view>
+  <view>年龄：{{six}}</view>
+
+</template>
+<view class="container">  
+  <template is = "myTemp" data="{{name:'lisi',age:'18'}}"/>
+  <template is = "myTemp" data="{{...user,name:'lisi',age:'18'}}"/>
+</view>
+<view class="container"> 
+  <wxs src = "../template/module.wxs" module = "item"> </wxs>
+  <view>{{item.status}}</view>
+  <view>{{item.school}}</view>
+  <view>{{item.method("这是一个方法")}}</view>
+</view>

@@ -1,0 +1,46 @@
+.container{
+  display: flex;
+  /** row row-reverse
+      column column-reverse **/
+  flex-direction: row-reverse;
+  margin-top: 300rpx;
+  /* nowrap 不换行
+     wrap 换行
+     */
+  white-space: nowrap;
+  flex-wrap: wrap;
+    /* flex-start 左对齐
+       flex-end 右对齐
+       center 居中对齐
+       space-between 中间为空
+       space-around 等值对齐
+     */
+  justify-content: space-around;
+}
+.a{
+  background-color: red;
+  /*order : 设置成员flex容器中的排序
+  flex：设置成员在flex容器中的占比*/
+  order: 1;
+  flex: 1;
+}
+.b{
+  background-color: green;
+  order: 4;
+  flex: 1;
+}
+.c{
+  background-color: orange;
+  order: 3;
+  flex: 1;
+}
+.d{
+  background-color: blue;
+  order: 2;
+  flex: 3;
+}
+.size {
+  width: 350rpx;
+  height: 500rpx;
+  display: inline-block;
+}

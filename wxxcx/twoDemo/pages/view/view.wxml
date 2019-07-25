@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+   <view class = "a size" hover-class='b'
+   hover-start-time='1000' hover-stay-time='7000'>a</view>
+ 
+
+</view>
+
+<view>
+<button bindtap='getLocation'>获取经纬度</button>
+</view>
+<view>
+<button bindtap='getChooseLocation'>获取地址</button>
+</view>

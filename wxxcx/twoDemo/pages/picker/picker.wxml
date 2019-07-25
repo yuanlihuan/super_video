@@ -1,0 +1,18 @@
+<picker range="{{ranges}}">请选择</picker>
+
+<picker range="{{ranges}}" value= "2">请选择</picker>
+
+<picker range="{{object}}" bindchange="mychange" bindcancel="mycancel" range-key='id'>{{showname}}</picker>
+
+<view>-----------</view>
+<picker mode = "time" bindchange="changetime" value="hh:mm" start="00:00" end ="23:59"> 时间选择器
+   <view class="picker">
+      当前选择: {{time}}
+    </view>
+</picker>
+
+<picker mode = "region" value='{{region}}'>
+   <view class="picker">
+      当前选择: {{city}}
+    </view>
+</picker>
