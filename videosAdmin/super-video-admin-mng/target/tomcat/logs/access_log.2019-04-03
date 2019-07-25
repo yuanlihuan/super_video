@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:20:59:22 +0800] "GET / HTTP/1.1" 302 - http-bio-8080-exec-1 1920
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:20:59:23 +0800] "GET /users/login.action HTTP/1.1" 200 9380 http-bio-8080-exec-3 942
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:20:59:24 +0800] "GET /static/pages/js/login.js?v=1.1 HTTP/1.1" 304 - http-bio-8080-exec-4 18
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:20:59:24 +0800] "GET /portal/image/itzixi_favicon.ico HTTP/1.1" 404 1013 http-bio-8080-exec-5 7
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:21:00:08 +0800] "POST /users/login.action HTTP/1.1" 200 58 http-bio-8080-exec-6 1832
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:21:00:10 +0800] "GET /center.action HTTP/1.1" 200 19239 http-bio-8080-exec-7 1974
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:21:00:11 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-9 0
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:21:00:33 +0800] "GET /bgm/showBgmList.action?_=1554296411351 HTTP/1.1" 200 855 http-bio-8080-exec-10 265
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:21:00:34 +0800] "GET /static/pages/js/bgmList.js?v=1.0.0.2 HTTP/1.1" 304 - http-bio-8080-exec-1 11
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:21:00:34 +0800] "POST /bgm/queryBgmList.action HTTP/1.1" 200 901 http-bio-8080-exec-1 277
